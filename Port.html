@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavithran Murugan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bgImage {
+            background-image: url("man-looking-milky-way-galaxy-3d-rendering.jpg");
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .headerfont {
+            font-family: "Tektur", sans-serif;
+            font-weight: 600;
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-custom {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            color: aliceblue !important;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            color: #00ffff !important;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .headerfont {
+                font-size: 2.5rem;
+            }
+            
+            .nav-link {
+                margin: 0 0.5rem;
+            }
+        }
+        .skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar {
+    background-image: linear-gradient(to right, #00ffff, #00b4d8);
+    transition: width 1.5s ease-in-out;
+}
+
+.progress-bar-striped {
+    background-size: 1rem 1rem;
+}
+
+/* Add color variations */
+.progress-bar[data-percent="90"] { background-image: linear-gradient(to right, #00ffff, #00b4d8); }
+.progress-bar[data-percent="85"] { background-image: linear-gradient(to right, #70e000, #38b000); }
+.progress-bar[data-percent="95"] { background-image: linear-gradient(to right, #ff6b6b, #ff0000); }
+.progress-bar[data-percent="88"] { background-image: linear-gradient(to right, #ffd700, #ffaa00); }
+.progress-bar[data-percent="80"] { background-image: linear-gradient(to right, #9d4edd, #5a189a); }
+.progress-bar[data-percent="92"] { background-image: linear-gradient(to right, #4cc9f0, #4895ef); }
+.progress-bar[data-percent="83"] { background-image: linear-gradient(to right, #f15bb5, #f72585); }
+
+/* Add these styles */
+.contact-card, .contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.text-cyan {
+    color: #00ffff !important;
+}
+
+.btn-cyan {
+    background: linear-gradient(45deg, #00ffff, #00b4d8);
+    color: #000 !important;
+    border: none;
+    font-family: 'Tektur', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-cyan:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.contact-item {
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+}
+
+.form-control {
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: #00ffff !important;
+}
+
+.form-control:focus {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+a.text-cyan:hover {
+    color: #00b4d8 !important;
+    text-decoration: none;
+}
+.developer-badge {
+    background: linear-gradient(45deg, #00ffff, #00b4d8);
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+}
+
+.badge-text {
+    font-family: 'Tektur', sans-serif;
+    color: #000;
+    font-weight: 600;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stack-item {
+    background: rgba(0, 255, 255, 0.627);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stack-item:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+}
+
+.focus-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.progress-bar {
+    height: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #00ffff, #00b4d8);
+    padding-left: 1rem;
+    color: #000;
+    font-weight: 600;
+    line-height: 25px;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.approach-card {
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.learning-path {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.path-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.path-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 30px;
+    color: #00b4d8;
+}
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.project-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), transparent);
+}
+
+.badge {
+    background: linear-gradient(45deg, #00ffff, #00b4d8);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    font-family: 'Tektur', sans-serif;
+}
+
+.btn {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #00ffff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Animation for project cards */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: cardEntrance 0.8s ease forwards;
+    opacity: 0;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.4s; }
+.project-card:nth-child(3) { animation-delay: 0.6s; }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark nav-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pavithran</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bgImage hero-section">
+        <div class="container text-center">
+            <h1 class="headerfont text-white mb-4">Hi I'm Pavithran Murugan</h1>
+            <h2 class="text-white-50">Web Developer & Designer</h2>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <!-- About Section -->
+    <section id="about" class="py-5" style="background-color: #020f21; min-height: 100vh;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Profile Summary -->
+                <div class="col-lg-6">
+                    <div class="developer-badge mb-4">
+                        <span class="badge-text">Python Full Stack Developer</span>
+                    </div>
+                    <h2 class="text-white headerfont mb-4">Building Digital Solutions with Precision</h2>
+                    <p class="lead text-white-50 mb-4">
+                        Specializing in crafting robust web applications through Django framework architecture 
+                        and modern frontend ecosystems. Currently enhancing expertise in AI/ML integration 
+                        for intelligent system development.
+                    </p>
+                    
+                    <!-- Core Stack -->
+                    <div class="stack-grid mb-5">
+                        <div class="stack-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-database"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="stack-item">
+                            <i classfab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="stack-item">
+                            <i class="fas fa-code"></i>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Technical Focus -->
+                <div class="col-lg-6">
+                    <div class="focus-card p-4">
+                        <h3 class="text-cyan mb-4">Current Technical Focus</h3>
+                        <div class="focus-item py-1">
+                            <div class="progress-bar">
+                                <span class="progress-fill" style="width: 85%">Full Stack Architecture</span>
+                            </div>
+                        </div>
+                        <div class="focus-item py-1">
+                            <div class="progress-bar">
+                                <span class="progress-fill" style="width: 75%">AI/ML Integration</span>
+                            </div>
+                        </div>
+                        <div class="focus-item py-1">
+                            <div class="progress-bar">
+                                <span class="progress-fill" style="width: 90%">Cloud Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Methodology -->
+                    <div class="approach-grid mt-4">
+                        <div class="approach-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>AI-Driven Development</h4>
+                            <p>Implementing ML models in production environments</p>
+                        </div>
+                        <div class="approach-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Secure Architecture</h4>
+                            <p>JWT Authentication & Data Encryption</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Learning Path -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="learning-path">
+                        <h3 class="text-cyan mb-4">Advanced Learning Track</h3>
+                        <div class="path-items">
+                            <div class="path-item">
+                                <i class="fas fa-robot"></i>
+                                <span>Machine Learning Algorithms</span>
+                            </div>
+                            <div class="path-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Neural Networks</span>
+                            </div>
+                            <div class="path-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Predictive Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- Work Section -->
+    <!-- Skills section -->
+    <section id="projects" class="py-5" style="background-color: #0a192f; min-height: 100vh;">
+        <div class="container">
+            <h2 class="text-center mb-5 text-white headerfont">Featured Projects</h2>
+            
+            <div class="row g-4">
+                <!-- Retail Billing System -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card rounded p-4">
+                        <div class="project-img mb-3 rounded" style="background-image: url('billing-system.jpg');"></div>
+                        <h3 class="text-white mb-2">Retail Billing System</h3>
+                        <div class="tech-stack mb-3">
+                            <span class="badge">Python</span>
+                            <span class="badge">Tkinter</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">Pandas</span>
+                        </div>
+                        <p class="text-white-50">
+                            Desktop application for retail management with inventory tracking, billing, 
+                            and sales reporting features.
+                        </p>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-sm me-2">View Code</a>
+                            <a href="#" class="btn btn-sm">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Website -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card rounded p-4">
+                        <div class="project-img mb-3 rounded" style="background-image: url('portfolio-website.jpg');"></div>
+                        <h3 class="text-white mb-2">Portfolio Website</h3>
+                        <div class="tech-stack mb-3">
+                            <span class="badge">HTML5</span>
+                            <span class="badge">CSS3</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">Bootstrap</span>
+                        </div>
+                        <p class="text-white-50">
+                            Responsive personal portfolio website with skills section, 
+                            project showcase, and contact form.
+                        </p>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-sm me-2">View Live</a>
+                            <a href="#" class="btn btn-sm">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Django Web Application -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card rounded p-4">
+                        <div class="project-img mb-3 rounded" style="background-image: url('django-app.jpg');"></div>
+                        <h3 class="text-white mb-2">E-commerce Platform</h3>
+                        <div class="tech-stack mb-3">
+                            <span class="badge">Django</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">Bootstrap</span>
+                        </div>
+                        <p class="text-white-50">
+                            Full-stack e-commerce platform with user authentication, 
+                            product management, and payment integration.
+                        </p>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-sm me-2">Demo</a>
+                            <a href="#" class="btn btn-sm">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Add this JavaScript for scroll animation
+            document.addEventListener('DOMContentLoaded', function() {
+                const projectCards = document.querySelectorAll('.project-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+            
+                projectCards.forEach(card => {
+                    observer.observe(card);
+                });
+            });
+            </script>
+    </section>
+
+
+    <!-- Skill Section -->
+    <section id="skills" class="py-5" style="background-color: #0a192f; min-height: 100vh;">
+        <div class="container">
+            <h2 class="text-center mb-5 text-white headerfont">Technical Skills</h2>
+            
+            <div class="row g-4">
+                <!-- Python -->
+                <div class="col-md-6">
+                    <div class="skill-card p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white" style="font-family: 'Tektur', sans-serif;">Python</span>
+                            <span class="text-white">90%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" 
+                                 data-percent="90" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Django -->
+                <div class="col-md-6">
+                    <div class="skill-card p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white" style="font-family: 'Tektur', sans-serif;">Django</span>
+                            <span class="text-white">85%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" 
+                                 data-percent="85" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Add more skills following the same pattern -->
+                <!-- HTML -->
+                <div class="col-md-6">
+                    <div class="skill-card p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white" style="font-family: 'Tektur', sans-serif;">HTML</span>
+                            <span class="text-white">95%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" 
+                                 data-percent="95" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- CSS -->
+                <div class="col-md-6">
+                    <div class="skill-card p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white" style="font-family: 'Tektur', sans-serif;">CSS</span>
+                            <span class="text-white">88%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" 
+                                 data-percent="88" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- JavaScript -->
+                <div class="col-md-6">
+                    <div class="skill-card p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white" style="font-family: 'Tektur', sans-serif;">JavaScript</span>
+                            <span class="text-white">80%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" 
+                                 data-percent="80" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Bootstrap -->
+                <div class="col-md-6">
+                    <div class="skill-card p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white" style="font-family: 'Tektur', sans-serif;">Bootstrap</span>
+                            <span class="text-white">92%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" 
+                                 data-percent="92" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- MySQL -->
+                <div class="col-md-6">
+                    <div class="skill-card p-4 rounded">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-white" style="font-family: 'Tektur', sans-serif;">MySQL</span>
+                            <span class="text-white">83%</span>
+                        </div>
+                        <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;" 
+                                 data-percent="83" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // Add this JavaScript at the end before closing body tag
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const progressBars = document.querySelectorAll('.progress-bar');
+                        
+                        function animateProgressBars() {
+                            progressBars.forEach(bar => {
+                                const targetWidth = bar.getAttribute('data-percent') + '%';
+                                bar.style.width = targetWidth;
+                            });
+                        }
+                    
+                        // Animate when section comes into view
+                        const skillsSection = document.getElementById('skills');
+                        const options = {
+                            threshold: 0.5
+                        };
+                    
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if(entry.isIntersecting) {
+                                    animateProgressBars();
+                                }
+                            });
+                        }, options);
+                    
+                        observer.observe(skillsSection);
+                    });
+                    </script>                    
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+     <!-- Add after Projects section -->
+<section id="contact" class="py-5" style="background-color: #0a192f; min-height: 100vh;">
+    <div class="container">
+        <h2 class="text-center mb-5 text-white headerfont">Get in Touch</h2>
+        
+        <div class="row g-4">
+            <!-- Contact Information -->
+            <div class="col-md-6">
+                <div class="contact-card p-4 rounded">
+                    <h3 class="text-white mb-4 headerfont">Contact Details</h3>
+                    
+                    <div class="contact-item d-flex align-items-center mb-4">
+                        <i class="fas fa-map-marker-alt fa-2x text-cyan me-3"></i>
+                        <div>
+                            <h5 class="text-white mb-0">Address</h5>
+                            <p class="text-white-50 mb-0">
+                                136/2B, Manjunatheshwaran Illam,<br>
+                                Arunjunai Nagar, Avaniyapuram ByPass Road,<br>
+                                Madurai-625012, Tamil Nadu
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center mb-4">
+                        <i class="fas fa-phone fa-2x text-cyan me-3"></i>
+                        <div>
+                            <h5 class="text-white mb-0">Phone</h5>
+                            <p class="text-white-50 mb-0">+91 7904536593</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center mb-4">
+                        <i class="fas fa-envelope fa-2x text-cyan me-3"></i>
+                        <div>
+                            <h5 class="text-white mb-0">Email</h5>
+                            <p class="text-white-50 mb-0">pavithranmurugan.offical@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center mb-4">
+                        <i class="fab fa-linkedin fa-2x text-cyan me-3"></i>
+                        <div>
+                            <h5 class="text-white mb-0">LinkedIn</h5>
+                            <p class="text-white-50 mb-0">
+                                <a href="https://linkedin.com/in/pavithran-murugan-in/" 
+                                   class="text-cyan" 
+                                   target="_blank">
+                                   linkedin.com/in/pavithran-murugan-in/
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item d-flex align-items-center">
+                        <i class="fas fa-code fa-2x text-cyan me-3"></i>
+                        <div>
+                            <h5 class="text-white mb-0">Codewars</h5>
+                            <p class="text-white-50 mb-0">
+                                <a href="https://codewars.com/users/Pavithran006" 
+                                   class="text-cyan" 
+                                   target="_blank">
+                                   codewars.com/users/Pavithran006
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-6">
+                <div class="contact-form p-4 rounded">
+                    <h3 class="text-white mb-4 headerfont">Send a Message</h3>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control bg-dark text-white" 
+                                   placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control bg-dark text-white" 
+                                   placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control bg-dark text-white" 
+                                   placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control bg-dark text-white" 
+                                      rows="5" 
+                                      placeholder="Your Message" 
+                                      required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-cyan">
+                            Send Message <i class="fas fa-paper-plane ms-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+</html>
